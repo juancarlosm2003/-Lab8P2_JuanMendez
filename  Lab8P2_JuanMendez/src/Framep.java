@@ -35,6 +35,11 @@ public class Framep extends javax.swing.JFrame {
             modelo.addRow(row);
         }
     }
+    public void listar(){
+        for (int i = 0; i < mascotas.size(); i++){
+            JOptionPane.showInputDialog(mascotas.get(i));
+        }
+    }
 
     /**
      * Creates new form Framep
@@ -72,10 +77,10 @@ public class Framep extends javax.swing.JFrame {
         table_mascotas = new javax.swing.JTable();
         jProgressBar1 = new javax.swing.JProgressBar();
         jPanel6 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
         comandos = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txt_nombre = new javax.swing.JTextField();
@@ -189,14 +194,21 @@ public class Framep extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Mascota", jPanel5);
 
-        jScrollPane5.setViewportView(jList3);
-
         jButton5.setText("->");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton5MouseClicked(evt);
             }
         });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -205,7 +217,7 @@ public class Framep extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5)
+                    .addComponent(jScrollPane2)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(comandos, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -216,8 +228,8 @@ public class Framep extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comandos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -474,13 +486,6 @@ public class Framep extends javax.swing.JFrame {
         cargartabla2();
     }//GEN-LAST:event_jButton2MouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-        // TODO add your handling code here:
-        if (comandos.equals("!pet active nombre")){
-            JOptionPane.showConfirmDialog(this, "si");
-        }
-    }//GEN-LAST:event_jButton5MouseClicked
-
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
         String nombre;
@@ -500,6 +505,74 @@ public class Framep extends javax.swing.JFrame {
         dialogoitem.setLocationRelativeTo(this);
         dialogoitem.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        String coman = comandos.getText();
+        if (coman.equalsIgnoreCase("!pet active nombre")) {
+            
+        } else {
+            if (coman.equalsIgnoreCase("!pet feed idItem")) {
+
+            } else {
+                if (coman.equalsIgnoreCase("!pet list")) {
+
+                } else {
+                    if (coman.equalsIgnoreCase("!adopt nombre")) {
+
+                    } else {
+                        if (coman.equalsIgnoreCase("!mine idZona")) {
+
+                        }else{
+                            if (coman.equalsIgnoreCase("!fish idZona")) {
+                                
+                            }else{
+                                if (coman.equalsIgnoreCase("!zone list")) {
+                                    
+                                }else{
+                                    if (coman.equalsIgnoreCase("!sell idItem")) {
+                                        
+                                    }else{
+                                        if (coman.equalsIgnoreCase("!item list")) {
+
+                                        } else {
+                                            if (coman.equalsIgnoreCase("!buy idItem")) {
+
+                                            } else {
+                                                if (coman.equalsIgnoreCase("!d $$$$")) {
+
+                                                } else {
+                                                    if (coman.equalsIgnoreCase("!w $$$$")) {
+
+                                                    } else {
+                                                        if (coman.equalsIgnoreCase("!b")) {
+
+                                                        } else {
+                                                            if (coman.equalsIgnoreCase("!clear")) {
+
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                    }
+                                }
+                            }
+
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        if (comandos.equals("!pet active nombre")) {
+
+
+            JOptionPane.showConfirmDialog(this, "si");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -559,18 +632,18 @@ public class Framep extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTree jTree1;
     private javax.swing.JTable table_mascotas;
     private javax.swing.JTable tableitem;
