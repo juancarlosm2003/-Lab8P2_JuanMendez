@@ -40,6 +40,26 @@ public class Framep extends javax.swing.JFrame {
             JOptionPane.showInputDialog(mascotas.get(i));
         }
     }
+    private void cargartext3() {
+        for (Mascotas mascotas : mascotas) {
+            jTextArea1.append(mascotas.getNombre());
+
+        }
+    }
+
+    private void cargartext4() {
+        for (Item item : item) {
+            jTextArea1.append(item.getNombre());
+
+        }
+    }
+
+    private void cargartext5() {
+        for (Zona zona : zona) {
+            jTextArea1.append(zona.getNombre());
+
+        }
+    }
 
     /**
      * Creates new form Framep
@@ -493,8 +513,8 @@ public class Framep extends javax.swing.JFrame {
         nombre = txt_nombre3.getText();
         derrumbe = Integer.parseInt(txt_derrumbe.getText());
         ataque = Integer.parseInt(txt_ataque.getText());
-        zona.add(new Zona(nombre,derrumbe,ataque));
-        
+        zona.add(new Zona(nombre, derrumbe, ataque));
+
         JOptionPane.showConfirmDialog(this, "Zona guardada exitosamente");
     }//GEN-LAST:event_jButton4MouseClicked
 
@@ -510,58 +530,65 @@ public class Framep extends javax.swing.JFrame {
         // TODO add your handling code here:
         String coman = comandos.getText();
         if (coman.equalsIgnoreCase("!pet active nombre")) {
-            
+
         } else {
             if (coman.equalsIgnoreCase("!pet feed idItem")) {
 
             } else {
                 if (coman.equalsIgnoreCase("!pet list")) {
-
+                    cargartext3();
                 } else {
                     if (coman.equalsIgnoreCase("!adopt nombre")) {
-
+                        int ad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion de la mascota que desea adoptar"));
+                        JOptionPane.showConfirmDialog(this, "Mascota adoptada exitosamente");
                     } else {
                         if (coman.equalsIgnoreCase("!mine idZona")) {
 
-                        }else{
+                        } else {
                             if (coman.equalsIgnoreCase("!fish idZona")) {
-                                
-                            }else{
+
+                            } else {
                                 if (coman.equalsIgnoreCase("!zone list")) {
-                                    
-                                }else{
+                                    cargartext5();
+                                } else {
                                     if (coman.equalsIgnoreCase("!sell idItem")) {
-                                        
-                                    }else{
+
+                                    } else {
                                         if (coman.equalsIgnoreCase("!item list")) {
 
                                         } else {
                                             if (coman.equalsIgnoreCase("!buy idItem")) {
-
                                             } else {
+                                                if (coman.equalsIgnoreCase("!bag")) {
+                                                    cargartext4();
+                                                }
                                                 if (coman.equalsIgnoreCase("!d $$$$")) {
-
+                                                    int depositar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el monto a depositar"));
                                                 } else {
                                                     if (coman.equalsIgnoreCase("!w $$$$")) {
-
+                                                        int reti = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el monto a retirar"));
                                                     } else {
                                                         if (coman.equalsIgnoreCase("!b")) {
-
+                                                            jTextArea1.append("1000");
                                                         } else {
                                                             if (coman.equalsIgnoreCase("!clear")) {
-
+                                                                jTextArea1.remove(this);
+                                                                JOptionPane.showConfirmDialog(this, "Borrado exitosamente");
                                                             }
                                                         }
                                                     }
                                                 }
                                             }
+                                        }
                                     }
                                 }
-                            }
 
+                            }
+                        }
                     }
                 }
             }
+        
         }
     }//GEN-LAST:event_jButton5MouseClicked
 
