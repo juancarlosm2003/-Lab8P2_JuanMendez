@@ -555,9 +555,10 @@ public class Framep extends javax.swing.JFrame {
 
                                     } else {
                                         if (coman.equalsIgnoreCase("!item list")) {
-
+                                            cargartext4();
                                         } else {
                                             if (coman.equalsIgnoreCase("!buy idItem")) {
+
                                             } else {
                                                 if (coman.equalsIgnoreCase("!bag")) {
                                                     cargartext4();
@@ -588,7 +589,7 @@ public class Framep extends javax.swing.JFrame {
                     }
                 }
             }
-        
+
         }
     }//GEN-LAST:event_jButton5MouseClicked
 
